@@ -24,3 +24,9 @@ clean:
 docs:
 	mkdir -p docs/
 	doxygen Doxyfile
+
+release:
+	mkdir -p quadtree-$(VERSION)
+	cp *.[c,h] Makefile config.mk README.md LICENSE Doxyfile quadtree-$(VERSION)/
+	tar -czvf quadtree-$(VERSION).tar.gz quadtree-$(VERSION)
+	rm -rf quadtree-$(VERSION)

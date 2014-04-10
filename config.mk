@@ -1,6 +1,8 @@
 # quadtree build config options. Set the variables
 # as desired.
 
+VERSION = 0.1
+
 MAINOBJS = quadtree.o aabb.o
 
 ## Set BITS to 64 to install to lib64/

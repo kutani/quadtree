@@ -1,5 +1,7 @@
-quadtree
+quadtree v0.1
 ========
+
+## Description
 
 This is a basic C library implementing a general-use quadtree.  It has optional
 thread-safety (enabled by calling a specific function with mutex-handling
@@ -8,6 +10,22 @@ function pointers).
 All data structures are opaque to simplify usability; only the top-level entry
 functions are available.  However, structure typedefs are documented and there
 is nothing stopping you from moving them into the header files.
+
+
+## Download
+
+### Repository
+
+The latest development version can be found at GitHub:
+
+[Github Page](https://github.com/kutani/quadtree)
+
+### Tarball
+
+Stable tarballs can be found here:
+
+[General Criticism](http://www.generalcriticism.com/software/quadtree)
+
 
 ## Compiling
 
@@ -142,6 +160,20 @@ my list to implement.
 
 Possibly. If you discover and/or fix any, please send me a pull request and I'll
 take a look.
+
+
+
+### Repository
+
+The latest development version can be found at GitHub:
+
+[Github Page](https://github.com/kutani/quadtree)
+
+### Tarball
+
+Stable tarballs can be found here:
+
+[General Criticism](http://www.generalcriticism.com/software/quadtree)
 
 ## License
 

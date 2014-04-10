@@ -204,7 +204,7 @@ static int
 qnode_insert(qtree p, qnode *q, void *ptr) {
 	(p->lockfn)(q->lock);
 	
-    atomic_incrlock(p, q);
+	atomic_incrlock(p, q);
     
 	while(atomic_val(p,q) != 1) {}
 
@@ -225,7 +225,7 @@ qnode_insert(qtree p, qnode *q, void *ptr) {
 	if(! q->nw)
 		subdivide(p, q);
 
-    atomic_decrlock(p, q);
+	atomic_decrlock(p, q);
 
 	if(qnode_insert(p,q->nw,ptr))
 		return 1;
