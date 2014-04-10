@@ -32,13 +32,10 @@ qtree qtree_new(float x, float y, float w, float h, qtree_fnc fnc);
 
 /// Set mutex usage information
 /*!
-  Sets the mutex and mutex-handling functions for the given quadtree
+  Sets the mutex-handling functions for the given quadtree
   to enable thread safety.
-
-  freefn can be NULL to allow users to manage their own mutex memory
-  rather than allowing the qtree code to do it.
 */
-void qtree_set_mutex(qtree q, void *mutex, void *lockfn, void *unlockfn, void *freefn);
+void qtree_set_mutex(qtree q, void *newfn, void *lockfn, void *unlockfn, void *freefn);
 
 /// Frees the passed qtree
 /*!
