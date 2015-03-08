@@ -2,7 +2,7 @@
   aabb.h
   2014 JSK (kutani@projectkutani.com)
 
-  Simple axis-aligned bounding box implementation. Part of the Panic
+  Simple (2D) axis-aligned bounding box implementation. Part of the Panic
   Panic project.
 
   Released to the public domain. See LICENSE for details.

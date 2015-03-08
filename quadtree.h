@@ -34,6 +34,9 @@ qtree qtree_new(float x, float y, float w, float h, qtree_fnc fnc);
 /*!
   Sets the mutex-handling functions for the given quadtree
   to enable thread safety.
+
+  If quadtree.c is built with QTREE_THREADSAFE == 0, this function
+  is a no-op.
 */
 void qtree_set_mutex(qtree q, void *newfn, void *lockfn, void *unlockfn, void *freefn);
 

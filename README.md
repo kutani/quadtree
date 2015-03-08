@@ -20,12 +20,6 @@ The latest development version can be found at GitHub:
 
 [Github Page](https://github.com/kutani/quadtree)
 
-### Tarball
-
-Stable tarballs can be found here:
-
-[General Criticism](http://www.generalcriticism.com/software/quadtree)
-
 
 ## Compiling
 
@@ -50,6 +44,20 @@ Or, for 64-bit systems:
 
 I recommend just editing config.mk if you're going to use the install/uninstall
 targets, though.
+
+### Thread Safety at Compile Time
+
+config.mk has a NO_THREAD_SAFETY variable, commented-out by default. Uncommenting
+it will build the library without thread safety. This will result in a performance
+gain at the expense of, well, thread safety.
+
+If thread safety is compiled in, you can still avoid some of the performance hit
+by not setting the mutex functions (with `qtree_set_mutex()`); locking functions
+will then be replaced with an inline no-op dummy function.
+
+If you're including quadtree.c in your own project instead of linking against the
+static library, you can disable thread safety yourself by defining NO_THREAD_SAFETY
+as a preprocessor directive. See quadtree.c for more details.
 
 ### Doxygen
 
@@ -125,6 +133,8 @@ A combination of read/insert/remove can operate on a tree concurrently, but
 `qtree_clear()` waits for exclusive access on the entire tree, to prevent the
 other operations from affecting stale data.
 
+See above for disabling thread safety at compile-time for performance.
+
 ## aabb.c and aabb.h
 
 AABB is "axis-aligned bounding box." The C and header files are purely
@@ -160,20 +170,6 @@ my list to implement.
 
 Possibly. If you discover and/or fix any, please send me a pull request and I'll
 take a look.
-
-
-
-### Repository
-
-The latest development version can be found at GitHub:
-
-[Github Page](https://github.com/kutani/quadtree)
-
-### Tarball
-
-Stable tarballs can be found here:
-
-[General Criticism](http://www.generalcriticism.com/software/quadtree)
 
 ## License
 
